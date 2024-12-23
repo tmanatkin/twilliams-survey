@@ -20,6 +20,7 @@ form {
 
 form * {
   display: block;
+  font-family: inherit;
 }
 
 .input-row {
@@ -32,6 +33,26 @@ form * {
 
 .input-row > * {
   flex-grow: 1;
+}
+
+.input-field {
+  margin: 0 0 15px 0;
+}
+
+.input-field .input-error {
+  color: var(--color-error);
+  height: 1em;
+  font-size: 0.85em;
+  margin: 2px 0 0 0;
+}
+
+.input-field textarea {
+  resize: none;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0.5em;
+  margin: 0 0 30px 0;
+  height: 8.5em;
 }
 
 .rating-container-1-5 input,
@@ -53,14 +74,16 @@ form h2 {
 
 form p {
   margin-bottom: 5px;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 input[type="text"],
 input[type="number"],
 input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea,
 select {
-  margin: 0 0 30px 0;
   border: 1px solid var(--color-grey-light);
   width: 100%;
   padding: 10px;
@@ -71,7 +94,10 @@ select {
 
 input[type="text"]:focus,
 input[type="number"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
   outline-color: var(--color-primary);
 }
 
@@ -213,7 +239,7 @@ form button {
   background-color: var(--color-primary);
   color: white;
   border: 1.5px transparent solid;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 500;
   padding: 15px 0;
   width: 100%;
@@ -227,12 +253,6 @@ form button:hover {
   color: var(--color-primary);
   background-color: white;
   border: 1.5px solid var(--color-primary);
-}
-
-#error-message {
-  color: red;
-  font-style: italic;
-  display: none;
 }
 
 /* Mobile */
@@ -258,6 +278,9 @@ form button:hover {
   input[type="text"],
   input[type="number"],
   input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
   select,
   form p,
   .radioSelector,
@@ -272,7 +295,10 @@ form button:hover {
   input[type="text"],
   input[type="number"],
   input[type="password"],
-  select {
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
     padding: 5px;
     font-size: 1.25rem;
   }
