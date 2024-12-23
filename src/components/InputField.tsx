@@ -5,7 +5,7 @@ interface InputFieldProps {
   validation?: "email" | "phone" | "zip";
 }
 
-const InputField: React.FC<InputFieldProps> = ({ title, type, required }) => {
+const InputField: React.FC<InputFieldProps> = ({ title, type, required, validation }) => {
   const identifier = title.replace(/\s+/g, "_").toLowerCase();
   return (
     <div className="input-field">
